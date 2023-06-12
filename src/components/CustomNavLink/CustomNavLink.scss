@@ -1,0 +1,6 @@
+@import "../../styles/variables";
+
+.active {
+  border-bottom: 4px solid $color-accent;
+  padding: 5px;
+}

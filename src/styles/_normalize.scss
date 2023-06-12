@@ -1,0 +1,44 @@
+@import "variables";
+* {
+  box-sizing: border-box;
+  font-family: 'Fixel', Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-size: 14px;
+  font-weight: 500;
+  color: $color-font;
+  background-color: $color-bg-dark;
+
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url(../assets/fonts/FixelDisplay-Regular.ttf);
+  font-style: normal;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url(../assets/fonts/FixelDisplay-Medium.ttf);
+  font-style: normal;
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url(../assets/fonts/FixelDisplay-SemiBold.ttf);
+  font-style: normal;
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Fixel';
+  src: url(../assets/fonts/FixelDisplay-Bold.ttf);
+  font-style: normal;
+  font-weight: 700;
+}
+
+

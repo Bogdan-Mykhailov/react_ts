@@ -1,0 +1,12 @@
+@import "../../styles/variables";
+
+.header {
+  display: flex;
+  padding: 20px;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color-bg;
+  box-shadow: 3px 2px 16px -9px #000000;
+}
