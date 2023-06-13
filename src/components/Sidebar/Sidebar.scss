@@ -2,7 +2,7 @@
 
 .sidebar {
   height: calc(100vh - 75px);
-  max-width: 250px;
+  width: $sidebar-width;
   display: flex;
   flex-direction: column;
   background-color: $color-white;
@@ -49,6 +49,7 @@
 }
 
 .button {
+  cursor: pointer;
   width: 40px;
   height: 40px;
   border-radius: 50%;

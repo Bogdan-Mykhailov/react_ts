@@ -4,7 +4,7 @@ import { RoutePath } from '../../routes/RoutesPath';
 import './Sidebar.scss';
 import * as images from '../../assets';
 import * as icons from '../../assets/icons';
-import { Button } from '../Button/Button';
+import { Button } from '../Button';
 
 export const Sidebar = () => {
   return (
