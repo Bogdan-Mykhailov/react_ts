@@ -1,0 +1,19 @@
+@import "../../styles/variables";
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  &__logo {
+    width: 45px;
+    height: 45px;
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $color-secondary;
+  }
+}
