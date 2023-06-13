@@ -10,24 +10,8 @@
   padding: 60px 0;
   box-shadow: 3px 2px 16px -9px #000000;
 
-  &__avatar {
-    height: 150px;
-    width: 150px;
-    border-radius: 50%;
-    margin-bottom: 40px;
-    box-shadow: 0 0 14px 0 rgba(0,0,0,0.32),
-    inset -0.2px -0.2px 14px -0.2px rgba(0,0,0,0.32);
+  &__user-info {
     position: relative;
-
-    &::after {
-      content: '';
-      position: absolute;
-      height: 30px;
-      width: 30px;
-      background-color: $color-accent;
-      top: 10px;
-      left: 10px;
-    }
   }
 
   &__menu {
@@ -43,5 +27,45 @@
 
   &__menu-item {
     font-weight: 600;
+  }
+}
+
+.user-info {
+
+  &__avatar {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 40px;
+    box-shadow: 0 0 14px 0 rgba(0,0,0,0.32),
+    inset -0.2px -0.2px 14px -0.2px rgba(0,0,0,0.32);
+  }
+
+  &__button {
+    position: absolute;
+    bottom: 45px;
+    right: 0;
+  }
+}
+
+.button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-white;
+  box-shadow: 3px 2px 16px -9px #000000;
+
+  &:hover {
+    background-color: $color-bg-dark;
+    border-color: $color-bg-dark;
+  }
+
+  &__icon {
+    width: 22px;
+    height: 22px;
   }
 }

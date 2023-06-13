@@ -2,7 +2,9 @@ import React from 'react';
 import './Header.scss';
 import { Logo } from '../Logo';
 import { Input } from '../Input';
-import * as icons from '../../assets';
+import * as icons from '../../assets/icons';
+import { Clock } from '../Clock';
+import { CurrentDate } from '../CurrentDate/CurrentDate';
 
 export const Header = () => {
   return (
@@ -16,18 +18,22 @@ export const Header = () => {
           className="search-content__input"
         />
       </div>
+
       <div className="header__stats stats">
         <div className="stats__date-wrapper">
           <span className="stats__title">Сьогодні</span>
-          <span className="stats__date">12 бер, 2017</span>
+
+          <CurrentDate className="stats__date" />
         </div>
+
         <div className="stats__time-wrapper">
           <img
             className="stats__icon"
             src={icons.clock}
             alt="Clock icon"
           />
-          <span className="stats__time">17:20</span>
+
+          <Clock className="stats__time" />
         </div>
       </div>
     </header>

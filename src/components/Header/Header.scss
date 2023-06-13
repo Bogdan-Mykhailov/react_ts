@@ -38,6 +38,7 @@
       font-size: 14px;
       font-weight: 700;
       color: $color-primary;
+      font-family: Fixel, sans-serif;
     }
   }
 }
@@ -49,21 +50,26 @@
   &__date-wrapper {
     display: flex;
     flex-direction: column;
-    margin-right: 15px;
+    margin-right: 20px;
   }
 
-  &__title, &__date, &__time {
+  &__title, &__date {
     font-size: 16px;
+  }
+
+  &__time {
+    font-size: 16px;
+    width: 20px;
   }
 
   &__time-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
   }
 
   &__icon {
     width: 15px;
     height: 15px;
+    margin-right: 10px;
   }
 }
