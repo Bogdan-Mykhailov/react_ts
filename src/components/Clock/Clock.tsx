@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import './Clock.scss';
-import { getTwoDigits } from '../../utils/helpers';
+import { getTwoDigits } from '../../utils';
 
 interface Props {
   className?: string;

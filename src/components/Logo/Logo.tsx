@@ -2,7 +2,7 @@ import { FC } from 'react';
 import './Logo.scss';
 import { useNavigate } from 'react-router-dom';
 import * as images from '../../assets';
-import { RoutePath } from '../../routes/RoutesPath';
+import { RoutePath } from '../../routes';
 
 export const Logo: FC = () => {
   const navigate = useNavigate();

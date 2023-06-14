@@ -13,21 +13,6 @@
   &__user-info {
     position: relative;
   }
-
-  &__menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 18px;
-
-    :not(:last-child) {
-      margin-bottom: 20px;
-    }
-  }
-
-  &__menu-item {
-    font-weight: 600;
-  }
 }
 
 .user-info {

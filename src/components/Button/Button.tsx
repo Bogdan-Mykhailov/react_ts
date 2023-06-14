@@ -1,6 +1,6 @@
-import { FC } from 'react';
+import { ButtonHTMLAttributes, FC } from 'react';
 
-interface Props {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   type?: 'button' | 'submit' | 'reset';
   icon?: string;
   buttonStyles: string;
@@ -12,8 +12,10 @@ export const Button: FC<Props> = ({
   iconStyles,
   type = 'button',
   icon,
+  onClick,
+
 }) => (
-  <button className={buttonStyles} type={type}>
+  <button onClick={onClick} className={buttonStyles} type={type}>
     <img
       className={iconStyles}
       src={icon}

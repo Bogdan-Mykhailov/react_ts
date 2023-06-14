@@ -1,12 +1,38 @@
 import React from 'react';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
 import './HomePage.scss';
-import { Container } from '../../components/Container';
-import { PageTitle } from '../../components/PageTitle';
-import { Button } from '../../components/Button';
 import * as icons from '../../assets/icons';
+import {
+  Button,
+  Container,
+  PageTitle,
+  Sidebar,
+} from '../../components';
+import {
+  addOrder,
+  useAppDispatch,
+  useAppSelector,
+} from '../../services';
+import { getOrdersWithProducts } from '../../utils';
+import { OrderList } from '../../components/OrderList';
 
 export const HomePage = () => {
+  const orders = useAppSelector((state) => state.orders.orders);
+  const products = useAppSelector((state) => state.products.products);
+  const dispatch = useAppDispatch();
+
+  const ordersWithProducts = getOrdersWithProducts(orders, products);
+
+  const handleAddOrderClick = () => {
+    const newOrder = {
+      id: orders.length + 1,
+      title: `Нове надходження ${orders.length + 1}`,
+      date: new Date().toISOString(),
+      description: 'Додайте детальний опис надходжень',
+    };
+
+    dispatch(addOrder(newOrder));
+  };
+
   return (
     <div className="home">
       <Sidebar />
@@ -14,12 +40,15 @@ export const HomePage = () => {
       <Container>
         <div className="home__page-info">
           <Button
+            onClick={handleAddOrderClick}
             buttonStyles="home-button"
             iconStyles="home-button__icon"
             icon={icons.plus}
           />
-          <PageTitle title="Надходження" quantity={25} />
+          <PageTitle title="Надходження" quantity={orders.length} />
         </div>
+
+        <OrderList orders={ordersWithProducts} />
       </Container>
     </div>
   );

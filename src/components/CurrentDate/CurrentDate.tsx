@@ -1,6 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import './CurrentDate.scss';
-import { months } from '../../utils/data';
+import { months } from '../../utils';
 
 interface Props {
   className?: string;

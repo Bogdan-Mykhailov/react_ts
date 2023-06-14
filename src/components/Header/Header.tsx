@@ -4,7 +4,8 @@ import { Logo } from '../Logo';
 import { Input } from '../Input';
 import * as icons from '../../assets/icons';
 import { Clock } from '../Clock';
-import { CurrentDate } from '../CurrentDate/CurrentDate';
+import { CurrentDate } from '../CurrentDate';
+import { ActiveSessions } from '../ActiveSessions';
 
 export const Header = () => {
   return (
@@ -26,14 +27,18 @@ export const Header = () => {
           <CurrentDate className="stats__date" />
         </div>
 
-        <div className="stats__time-wrapper">
-          <img
-            className="stats__icon"
-            src={icons.clock}
-            alt="Clock icon"
-          />
+        <div className="stats__activity">
+          <ActiveSessions />
 
-          <Clock className="stats__time" />
+          <div className="stats__time-wrapper">
+            <img
+              className="stats__icon"
+              src={icons.clock}
+              alt="Clock icon"
+            />
+
+            <Clock className="stats__time" />
+          </div>
         </div>
       </div>
     </header>

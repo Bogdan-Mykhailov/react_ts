@@ -1,5 +1,7 @@
 import React from 'react';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
+
+import './SettingsPage.scss';
+import { Sidebar } from '../../components';
 
 export const SettingsPage = () => {
   return (

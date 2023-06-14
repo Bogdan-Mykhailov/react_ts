@@ -1,4 +1,4 @@
-import { PATH } from './types/Path';
+import { PATH } from './types';
 
 export const RoutePath: Record<PATH, string> = {
   [PATH.Main]: '/',

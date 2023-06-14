@@ -1,0 +1,121 @@
+@import "../../styles/variables";
+
+.order {
+  display: flex;
+  width: 100%;
+  border: 1px solid $color-border;
+  border-radius: 6px;
+  padding: 15px 30px;
+  margin-bottom: 14px;
+  align-items: center;
+  justify-content: space-between;
+
+  &__title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 26px;
+    border-bottom: 1px solid $color-primary;
+  }
+
+  &__products-button {
+    margin-left: 60px;
+  }
+
+  &__goods-quantity {
+    margin-left: 20px;
+  }
+
+  &__date {
+    margin-left: 60px;
+  }
+
+  &__price {
+    margin-left: 60px;
+  }
+
+  &__delete-button {
+    margin-left: 55px;
+  }
+}
+
+.products-button {
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid $color-border;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  &:hover {
+    border: 2px solid $color-border;
+  }
+}
+
+.goods-quantity {
+  display: flex;
+  flex-direction: column;
+
+  &__count {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  &__name {
+    font-size: 13px;
+  }
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__order {
+    font-size: 12px;
+  }
+
+  &__current {
+    font-size: 16px;
+  }
+}
+
+.price {
+  display: flex;
+  flex-direction: column;
+
+  &__usd {
+    font-size: 12px;
+  }
+
+  &__uah {
+    font-size: 16px;
+  }
+}
+
+.delete-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: transparent;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  &:hover {
+    border: 1px solid $color-border;
+  }
+}

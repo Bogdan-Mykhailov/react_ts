@@ -1,8 +1,10 @@
 import React from 'react';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
 import './ProductsPage.scss';
-import { PageTitle } from '../../components/PageTitle';
-import { Container } from '../../components/Container';
+import {
+  Container,
+  PageTitle,
+  Sidebar,
+} from '../../components';
 
 export const ProductsPage = () => {
   return (

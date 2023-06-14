@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import { FC } from 'react';
 
-import { PATH } from './types/Path';
 import { RoutePath } from './RoutesPath';
 import {
   UsersPage,
@@ -16,6 +15,7 @@ import {
   HomePage,
   NotFoundPage,
 } from '../pages';
+import { PATH } from './types';
 
 export const routeConfig: Record<PATH, RouteProps> = {
   [PATH.Main]: {

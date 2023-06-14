@@ -1,10 +1,9 @@
 import React from 'react';
-import { CustomNavLink } from '../CustomNavLink/CustomNavLink';
-import { RoutePath } from '../../routes/RoutesPath';
 import './Sidebar.scss';
 import * as images from '../../assets';
 import * as icons from '../../assets/icons';
 import { Button } from '../Button';
+import { NavigationMenu } from '../NavigationMenu';
 
 export const Sidebar = () => {
   return (
@@ -23,23 +22,7 @@ export const Sidebar = () => {
         />
       </div>
 
-      <menu className="sidebar__menu">
-        <li className="sidebar__menu-item">
-          <CustomNavLink to={RoutePath.main} title="Надходження" />
-        </li>
-        <li className="sidebar__menu-item">
-          <CustomNavLink to={RoutePath.groups} title="Групи" />
-        </li>
-        <li className="sidebar__menu-item">
-          <CustomNavLink to={RoutePath.products} title="Продукти" />
-        </li>
-        <li className="sidebar__menu-item">
-          <CustomNavLink to={RoutePath.users} title="Користувачі" />
-        </li>
-        <li className="sidebar__menu-item">
-          <CustomNavLink to={RoutePath.settings} title="Налаштування" />
-        </li>
-      </menu>
+      <NavigationMenu />
     </div>
   );
 };

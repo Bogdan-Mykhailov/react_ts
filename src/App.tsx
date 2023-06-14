@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.scss';
-import { MainRoutes } from './routes/MainRoutes';
-import { Header } from './components/Header';
+import { Header } from './components';
+import { MainRoutes } from './routes';
 
 export const App = () => {
   return (

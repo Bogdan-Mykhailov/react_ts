@@ -1,10 +1,12 @@
 import React from 'react';
-import { Sidebar } from '../../components/Sidebar/Sidebar';
-import { Container } from '../../components/Container';
-import { PageTitle } from '../../components/PageTitle';
 import * as icons from '../../assets/icons';
-import { Button } from '../../components/Button';
 import './GroupsPage.scss';
+import {
+  Button,
+  Container,
+  PageTitle,
+  Sidebar,
+} from '../../components';
 
 export const GroupsPage = () => {
   return (
