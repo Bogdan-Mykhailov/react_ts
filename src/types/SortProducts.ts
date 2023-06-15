@@ -1,7 +1,11 @@
 export enum SortProducts {
   ALL = 'all',
-  MONITORS = 'monitors',
-  PHONES = 'phones',
-  TABLETS = 'tablets',
-  ACCESSORIES = 'accessories',
+  MONITORS = 'Monitors',
+  KEYBOARDS = 'Keyboards',
+  MOUSES = 'Mouses',
+  SPEAKERS = 'Speakers',
+  PHONES = 'Phones',
+  TABLETS = 'Tablets',
+  LAPTOPS = 'Laptops',
+  ACCESSORIES = 'Accessories',
 }

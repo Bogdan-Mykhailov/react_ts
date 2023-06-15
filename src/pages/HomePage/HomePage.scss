@@ -10,6 +10,13 @@
     gap: 20px;
     margin-bottom: 80px;
   }
+
+  &__page-orders-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px;
+  }
 }
 
 .home-button {

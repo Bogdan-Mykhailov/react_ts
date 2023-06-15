@@ -14,8 +14,10 @@ import {
 } from '../../services';
 import { getOrdersWithProducts } from '../../utils';
 import { OrderList } from '../../components/OrderList';
+import { AddProductList } from '../../components/AddProductList';
 
 export const HomePage = () => {
+  const selected = useAppSelector((state) => state.selectedOrder.selected);
   const orders = useAppSelector((state) => state.orders.orders);
   const products = useAppSelector((state) => state.products.products);
   const dispatch = useAppDispatch();
@@ -48,7 +50,10 @@ export const HomePage = () => {
           <PageTitle title="Надходження" quantity={orders.length} />
         </div>
 
-        <OrderList orders={ordersWithProducts} />
+        <div className="home__page-orders-content">
+          <OrderList orders={ordersWithProducts} />
+          {selected && <AddProductList />}
+        </div>
       </Container>
     </div>
   );

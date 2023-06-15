@@ -7,8 +7,19 @@ import {
   PageTitle,
   Sidebar,
 } from '../../components';
+import { AddProductList } from '../../components/AddProductList';
+import { useAppSelector } from '../../services';
+import { OrderList } from '../../components/OrderList';
+import { getOrdersWithProducts } from '../../utils';
 
 export const GroupsPage = () => {
+  const orders = useAppSelector((state) => state.orders.orders);
+  const products = useAppSelector((state) => state.products.products);
+  const selected = useAppSelector((state) => state.selectedOrder.selected);
+  const ordersWithProducts = getOrdersWithProducts(orders, products);
+
+  const ordersQuantity = orders.length;
+
   return (
     <div className="groups">
       <Sidebar />
@@ -21,7 +32,12 @@ export const GroupsPage = () => {
             icon={icons.plus}
           />
 
-          <PageTitle title="Надходження" quantity={25} />
+          <PageTitle title="Надходження" quantity={ordersQuantity} />
+        </div>
+
+        <div className="home__page-orders-content">
+          <OrderList orders={ordersWithProducts} />
+          {selected && <AddProductList />}
         </div>
       </Container>
     </div>

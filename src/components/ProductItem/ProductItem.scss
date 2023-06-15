@@ -1,0 +1,99 @@
+@import '../../styles/variables';
+
+.product {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-radius: 6px;
+  padding: 15px 30px;
+  margin-bottom: 14px;
+  border: 1px solid $color-border;
+  justify-content: space-around;
+
+  &__information {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &__mark {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: $color-secondary-dark;
+    margin-right: 30px;
+  }
+
+  &__cover {
+    width: 40px;
+    margin-right: 30px;
+  }
+
+  &__type {
+    color: $color-secondary-dark;
+    font-size: 14px;
+    margin-right: 30px;
+  }
+
+  &__group-title {
+    font-size: 18px;
+    font-weight: 500;
+    border-bottom: 1px solid $color-border;
+    line-height: 18px;
+    text-align: center;
+  }
+}
+
+.name-cover {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 40px;
+
+  &__title {
+    width: max-content;
+    line-height: 16px;
+    font-size: 18px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &__serial {
+    font-size: 16px;
+    color: $color-border;
+  }
+}
+
+.guarantee {
+  display: flex;
+  flex-direction: column;
+  margin-right: 40px;
+
+  &__from, &__to {
+    font-size: 14px;
+    color: $color-border;
+    margin-right: 6px;
+  }
+
+  &__text {
+    text-align: center;
+  }
+}
+
+.cost {
+  display: flex;
+  flex-direction: column;
+  margin-right: 50px;
+
+  &__currency {
+    font-size: 14px;
+    line-height: 12px;
+    color: $color-border;
+    margin-bottom: 4px;
+
+    &:last-child {
+      font-size: 16px;
+      line-height: 14px;
+      color: $color-primary;
+    }
+  }
+}
