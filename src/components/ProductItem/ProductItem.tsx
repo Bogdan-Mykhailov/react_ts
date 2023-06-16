@@ -2,9 +2,11 @@ import React, { FC } from 'react';
 import './ProductItem.scss';
 import { Button } from '../Button';
 import * as icons from '../../assets/icons';
-import { deleteProduct, useAppDispatch } from '../../services';
 import { Product } from '../../types';
 import { createId } from '../../utils';
+import { Modal } from '../Modal';
+import { deleteProduct, useAppDispatch } from '../../services';
+import { useModal } from '../../hooks/useModal';
 
 interface Props {
   product: Product;
@@ -12,15 +14,17 @@ interface Props {
 
 export const ProductItem: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
+  const { toggleModal, modal } = useModal();
   const {
     id, title, type, guarantee, serialNumber, photo, price,
   } = product;
 
-  const handleRemoveProductClick = (productId: number) => {
-    dispatch(deleteProduct(productId));
-  };
-
   const orderTitle = 'Невідоме надходження';
+
+  const handleRemoveProductClick = () => {
+    dispatch(deleteProduct(id));
+    toggleModal();
+  };
 
   return (
     <div className="product">
@@ -67,11 +71,58 @@ export const ProductItem: FC<Props> = ({ product }) => {
       <span className="product__group-title">{orderTitle}</span>
 
       <Button
-        onClick={() => handleRemoveProductClick(id)}
+        onClick={toggleModal}
         buttonStyles="order__delete-button delete-button"
         iconStyles="delete-button__icon"
         icon={icons.trash}
       />
+
+      <Modal modalMode={modal} closeModal={toggleModal}>
+        <div className="delete-window">
+          <span className="delete-window__title">
+            Ви впевнені, що бажаєте видалити цей продукт?
+          </span>
+
+          <div className="delete-window__middle middle">
+            <div className="middle__wrap wrap">
+              <div className="wrap__mark" />
+              <img className="wrap__cover" src={photo} alt="Product cover" />
+            </div>
+
+            <div className="delete-window__group group">
+              <span className="group--title">{title}</span>
+              <span className="group--serial">{serialNumber}</span>
+            </div>
+          </div>
+
+          <div className="delete-window__buttons-wrapper buttons">
+            <button
+              className="buttons__no"
+              onClick={toggleModal}
+            >
+              Відмінити
+            </button>
+            <button
+              className="buttons__yes"
+              onClick={handleRemoveProductClick}
+            >
+              <img
+                className="buttons__yes--icon"
+                src={icons.trashRed}
+                alt="Trash bucket"
+              />
+              Видалити
+            </button>
+          </div>
+
+          <Button
+            onClick={toggleModal}
+            buttonStyles="add-product-list__cross-button cross-button"
+            iconStyles="cross-button__cross-button-icon"
+            icon={icons.cross}
+          />
+        </div>
+      </Modal>
     </div>
   );
 };

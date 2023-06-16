@@ -13,7 +13,12 @@ export const ProductList: FC<Props> = ({ products }) => {
       {products.map((product) => {
         const { id } = product;
 
-        return <ProductItem key={id} product={product} />;
+        return (
+          <ProductItem
+            key={id}
+            product={product}
+          />
+        );
       })}
     </div>
   );

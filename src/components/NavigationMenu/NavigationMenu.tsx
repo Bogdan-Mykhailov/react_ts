@@ -7,7 +7,7 @@ export const NavigationMenu = () => {
   return (
     <menu className="menu">
       <li className="menu__menu-item">
-        <CustomNavLink to={RoutePath.main} title="Надходження" />
+        <CustomNavLink to={RoutePath.main} title="Головна" />
       </li>
       <li className="menu__menu-item">
         <CustomNavLink to={RoutePath.groups} title="Групи" />

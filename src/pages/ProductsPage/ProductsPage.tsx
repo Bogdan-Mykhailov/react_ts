@@ -37,7 +37,10 @@ export const ProductsPage = () => {
           />
         </div>
 
-        <ProductList products={visibleProducts} />
+        <ProductList
+          products={visibleProducts}
+        />
+
       </Container>
     </div>
   );
