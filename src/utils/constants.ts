@@ -1,3 +1,2 @@
-import { io } from 'socket.io-client';
-
-export const socket = io('http://localhost:3000');
+export const VIDEO_PATH = 'https://res.cloudinary.com/dhg5wnekh/'
+  + 'video/upload/v1684446826/song_made_ctpwl2.mp4';

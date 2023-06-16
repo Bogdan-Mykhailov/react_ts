@@ -1,12 +1,12 @@
 import React from 'react';
 
 import './SettingsPage.scss';
-import { Sidebar } from '../../components';
+import { Video } from '../../components/Video';
 
 export const SettingsPage = () => {
   return (
-    <div>
-      <Sidebar />
+    <div className="settings">
+      <Video />
     </div>
   );
 };

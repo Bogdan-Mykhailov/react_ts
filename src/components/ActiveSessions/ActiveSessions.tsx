@@ -1,19 +1,22 @@
 import React, { useEffect, useState } from 'react';
-import { socket } from '../../utils';
-import './ActiveSessions.scss';
 
 export const ActiveSessions = () => {
   const [sessionCount, setSessionCount] = useState(0);
 
   useEffect(() => {
-    socket.on('sessionCountUpdate', (count: number) => {
-      setSessionCount(count);
-    });
+    const updateSessionCount = () => {
+      const activeSessions = Object.keys(sessionStorage)
+        .filter((key) => key.startsWith('session_'));
 
-    socket.emit('getSessionCount');
+      setSessionCount(activeSessions.length);
+    };
+
+    updateSessionCount();
+
+    window.addEventListener('storage', updateSessionCount);
 
     return () => {
-      socket.off('sessionCountUpdate');
+      window.removeEventListener('storage', updateSessionCount);
     };
   }, []);
 
@@ -21,7 +24,7 @@ export const ActiveSessions = () => {
 
   return (
     <>
-      <span className="activity">{title}</span>
+      <span>{title}</span>
     </>
   );
 };

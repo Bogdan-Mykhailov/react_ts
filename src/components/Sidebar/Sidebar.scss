@@ -1,7 +1,7 @@
 @import '../../styles/variables';
 
 .sidebar {
-  height: calc(100vh - 75px);
+  height: calc(100vh - $header-height);
   width: $sidebar-width;
   display: flex;
   flex-direction: column;
