@@ -3,7 +3,7 @@ import './NotFoundPage.scss';
 export const NotFoundPage = () => {
   return (
     <div className="notFound-wrapper">
-      <h2 className="title">
+      <h2 className="unicorn-main-title">
         Page not found
       </h2>
 
