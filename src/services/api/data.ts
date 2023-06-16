@@ -1,3 +1,5 @@
+import * as images from '../../assets';
+
 export const orders = [
   {
     id: 1,
@@ -24,13 +26,13 @@ export const products = [
     id: 1,
     serialNumber: 1234,
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
+    photo: images.monitor,
+    title: 'Acer Predator',
     type: 'Monitors',
     specification: 'Specification 1',
     guarantee: {
-      start: '2017-06-29 12:09:33',
-      end: '2017-06-29 12:09:33',
+      start: '16 червня 2023 р.',
+      end: '16 червня 2026 р.',
     },
     price: [
       { value: 100, symbol: 'USD', isDefault: 0 },
@@ -43,13 +45,13 @@ export const products = [
     id: 2,
     serialNumber: 1234,
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
-    type: 'Monitors',
+    photo: images.phone,
+    title: 'iPhone 14 Pro Max',
+    type: 'Phones',
     specification: 'Specification 1',
     guarantee: {
-      start: '2017-06-29 12:09:33',
-      end: '2017-06-29 12:09:33',
+      start: '16 червня 2023 р.',
+      end: '16 червня 2026 р.',
     },
     price: [
       { value: 100, symbol: 'USD', isDefault: 0 },
@@ -62,32 +64,13 @@ export const products = [
     id: 3,
     serialNumber: 1234,
     isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
-    type: 'Monitors',
+    photo: images.accessories,
+    title: 'Apple accessories',
+    type: 'Accessories',
     specification: 'Specification 1',
     guarantee: {
-      start: '2017-06-29 12:09:33',
-      end: '2017-06-29 12:09:33',
-    },
-    price: [
-      { value: 100, symbol: 'USD', isDefault: 0 },
-      { value: 2600, symbol: 'UAH', isDefault: 1 },
-    ],
-    order: 3,
-    date: '2017-06-29 12:09:33',
-  },
-  {
-    id: 4,
-    serialNumber: 1234,
-    isNew: 1,
-    photo: 'pathToFile.jpg',
-    title: 'Product 1',
-    type: 'Monitors',
-    specification: 'Specification 1',
-    guarantee: {
-      start: '2017-06-29 12:09:33',
-      end: '2017-06-29 12:09:33',
+      start: '16 червня 2023 р.',
+      end: '16 червня 2026 р.',
     },
     price: [
       { value: 100, symbol: 'USD', isDefault: 0 },

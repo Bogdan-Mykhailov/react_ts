@@ -1,6 +1,5 @@
 import React, { FC } from 'react';
 import './ProductItem.scss';
-import * as images from '../../assets';
 import { Button } from '../Button';
 import * as icons from '../../assets/icons';
 import { deleteProduct, useAppDispatch } from '../../services';
@@ -14,17 +13,14 @@ interface Props {
 export const ProductItem: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
   const {
-    id,
-    title,
-    type,
-    guarantee,
-    serialNumber,
-    price,
+    id, title, type, guarantee, serialNumber, photo, price,
   } = product;
 
   const handleRemoveProductClick = (productId: number) => {
     dispatch(deleteProduct(productId));
   };
+
+  const orderTitle = 'Невідоме надходження';
 
   return (
     <div className="product">
@@ -32,7 +28,7 @@ export const ProductItem: FC<Props> = ({ product }) => {
         <div className="product__mark" />
 
         <img
-          src={images.monitor}
+          src={photo}
           alt="Product poster"
           className="product__cover"
         />
@@ -68,7 +64,7 @@ export const ProductItem: FC<Props> = ({ product }) => {
         })}
       </div>
 
-      <span className="product__group-title">Group Name</span>
+      <span className="product__group-title">{orderTitle}</span>
 
       <Button
         onClick={() => handleRemoveProductClick(id)}

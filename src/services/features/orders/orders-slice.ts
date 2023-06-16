@@ -23,22 +23,8 @@ const orders = createSlice({
         (order) => order.id !== action.payload,
       );
     },
-
-    updateOrder: (state, action: PayloadAction<Order>) => {
-      const updatedIndex = state.orders.findIndex(
-        (order) => order.id === action.payload.id,
-      );
-
-      if (updatedIndex !== -1) {
-        state.orders[updatedIndex] = action.payload;
-      }
-    },
   },
 });
 
-export const {
-  addOrder,
-  deleteOrder,
-  updateOrder,
-} = orders.actions;
+export const { addOrder, deleteOrder } = orders.actions;
 export const ordersSlice = orders.reducer;

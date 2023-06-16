@@ -13,13 +13,8 @@ export const Button: FC<Props> = ({
   type = 'button',
   icon,
   onClick,
-
 }) => (
   <button onClick={onClick} className={buttonStyles} type={type}>
-    <img
-      className={iconStyles}
-      src={icon}
-      alt="Button icon"
-    />
+    <img className={iconStyles} src={icon} alt="Button icon" />
   </button>
 );

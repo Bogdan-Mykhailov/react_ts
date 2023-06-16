@@ -1,12 +1,20 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './AddProductItem.scss';
-import * as images from '../../assets';
 import * as icons from '../../assets/icons';
 import { Button } from '../Button';
 import { deleteProduct, useAppDispatch } from '../../services';
+import { Product } from '../../types';
 
-export const AddProductItem = () => {
+interface Props {
+  product: Product;
+}
+
+export const AddProductItem: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
+
+  const {
+    id, type, title, serialNumber, photo,
+  } = product;
 
   const handleRemoveProductClick = (productId: number) => {
     dispatch(deleteProduct(productId));
@@ -17,24 +25,20 @@ export const AddProductItem = () => {
       <div className="product__information">
         <div className="product__mark" />
 
-        <img
-          src={images.monitor}
-          alt="Product poster"
-          className="product__cover"
-        />
+        <img src={photo} alt="Product poster" className="product__cover" />
 
         <div className="product__name-cover name-cover">
-          <span className="name-cover__title">title</span>
-          <span className="name-cover__serial">serialNumber</span>
+          <span className="name-cover__title">{title}</span>
+          <span className="name-cover__serial">{serialNumber}</span>
         </div>
       </div>
 
-      <span className="product__type">type</span>
+      <span className="product__type">{type}</span>
 
       <Button
-        onClick={() => handleRemoveProductClick(1)}
-        buttonStyles="order__delete-button delete-button"
-        iconStyles="delete-button__icon"
+        onClick={() => handleRemoveProductClick(id)}
+        buttonStyles="product__delete-button delete-btn"
+        iconStyles="delete-btn__icon"
         icon={icons.trash}
       />
     </div>

@@ -13,13 +13,12 @@ export const OrderList: FC<Props> = ({ orders }) => {
 
   return (
     <div className={selected ? 'order-list--short' : 'order-list'}>
-      {
-        orders && orders.map(order => {
+      {orders
+        && orders.map((order) => {
           const { id } = order;
 
           return <OrderItem key={id} order={order} />;
-        })
-      }
+        })}
     </div>
   );
 };

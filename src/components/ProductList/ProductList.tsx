@@ -4,7 +4,7 @@ import { Product } from '../../types';
 import { ProductItem } from '../ProductItem';
 
 interface Props {
-  products: Product[]
+  products: Product[];
 }
 
 export const ProductList: FC<Props> = ({ products }) => {

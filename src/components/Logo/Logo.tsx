@@ -12,10 +12,7 @@ export const Logo: FC = () => {
   };
 
   return (
-    <div
-      className="content"
-      onClick={handleHomePageClick}
-    >
+    <div className="content" onClick={handleHomePageClick}>
       <img
         className="content__logo"
         src={images.logo}

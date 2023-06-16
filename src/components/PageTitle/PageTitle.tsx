@@ -6,13 +6,6 @@ interface Props {
   title: string;
 }
 
-export const PageTitle: FC<Props> = ({
-  quantity,
-  title,
-}) => {
-  return (
-    <span className="title">
-      {`${title} / ${quantity}`}
-    </span>
-  );
+export const PageTitle: FC<Props> = ({ quantity, title }) => {
+  return <span className="title">{`${title} / ${quantity}`}</span>;
 };

@@ -8,11 +8,7 @@ interface Props {
   value: SortProducts;
 }
 
-export const Select: FC<Props> = ({
-  label,
-  onSelectChange,
-  value,
-}) => {
+export const Select: FC<Props> = ({ label, onSelectChange, value }) => {
   return (
     <div className="select">
       <label className="select__label" htmlFor="select">
@@ -25,21 +21,17 @@ export const Select: FC<Props> = ({
         className="select__selector"
         id="select"
       >
-        {Object.values(SortProducts).map(
-          (type) => {
-            const correctName = type.slice(0, 1).toLocaleUpperCase()
-              + type.slice(1).toLocaleLowerCase();
+        {Object.values(SortProducts).map((type) => {
+          const correctName
+            = type.slice(0, 1).toLocaleUpperCase()
+            + type.slice(1).toLocaleLowerCase();
 
-            return (
-              <option
-                key={type}
-                value={type}
-              >
-                {correctName}
-              </option>
-            );
-          },
-        )}
+          return (
+            <option key={type} value={type}>
+              {correctName}
+            </option>
+          );
+        })}
       </select>
     </div>
   );

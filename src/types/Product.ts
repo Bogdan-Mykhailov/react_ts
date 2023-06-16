@@ -17,8 +17,8 @@ export interface Product {
   title: string;
   type: string;
   specification: string;
-  guarantee: Guarantee,
-  price: Price[],
+  guarantee: Guarantee;
+  price: Price[];
   order: number;
   date: string;
 }

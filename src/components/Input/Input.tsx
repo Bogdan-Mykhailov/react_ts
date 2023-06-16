@@ -7,14 +7,6 @@ interface Props {
   className: string;
 }
 
-export const Input: FC<Props> = ({
-  type,
-  placeholder,
-  className,
-}) => (
-  <input
-    type={type}
-    className={className}
-    placeholder={placeholder}
-  />
+export const Input: FC<Props> = ({ type, placeholder, className }) => (
+  <input type={type} className={className} placeholder={placeholder} />
 );

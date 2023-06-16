@@ -31,11 +31,7 @@ export const Header = () => {
           <ActiveSessions />
 
           <div className="stats__time-wrapper">
-            <img
-              className="stats__icon"
-              src={icons.clock}
-              alt="Clock icon"
-            />
+            <img className="stats__icon" src={icons.clock} alt="Clock icon" />
 
             <Clock className="stats__time" />
           </div>

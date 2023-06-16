@@ -6,9 +6,5 @@ interface Props {
 }
 
 export const Container: FC<Props> = ({ children }) => {
-  return (
-    <div className="container">
-      {children}
-    </div>
-  );
+  return <div className="container">{children}</div>;
 };

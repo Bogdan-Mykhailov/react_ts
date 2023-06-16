@@ -1,3 +1,10 @@
 export { default as rick } from './images/rick.png';
 export { default as logo } from './images/logo.png';
 export { default as monitor } from './images/monitor.png';
+export { default as accessories } from './images/accessories.png';
+export { default as keyboard } from './images/keyboard.png';
+export { default as laptop } from './images/laptop.png';
+export { default as mouse } from './images/mouse.png';
+export { default as phone } from './images/phone.png';
+export { default as speaker } from './images/speaker.png';
+export { default as tablet } from './images/tablet.png';

@@ -35,6 +35,18 @@ export const createId = () => {
     });
 };
 
-export const getVisibleProducts = () => {
+export const currentProductCount = (productQuantity?: number): string => {
+  if (productQuantity === undefined || productQuantity === 0) {
+    return 'Додайте продукти';
+  }
 
+  if (productQuantity === 1) {
+    return 'Продукт';
+  }
+
+  if (productQuantity <= 4) {
+    return 'Продукти';
+  }
+
+  return 'Продуктів';
 };

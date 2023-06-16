@@ -2,19 +2,15 @@ import React from 'react';
 import './HomePage.scss';
 import * as icons from '../../assets/icons';
 import {
-  Button,
-  Container,
-  PageTitle,
-  Sidebar,
+  Button, Container, PageTitle, Sidebar,
 } from '../../components';
-import {
-  addOrder,
-  useAppDispatch,
-  useAppSelector,
-} from '../../services';
+import { addOrder, useAppDispatch, useAppSelector } from '../../services';
 import { getOrdersWithProducts } from '../../utils';
 import { OrderList } from '../../components/OrderList';
 import { AddProductList } from '../../components/AddProductList';
+import { useGetOrder } from '../../hooks/useGetOrder';
+import { OrderWithProducts } from '../../types';
+import { formattedDate } from '../../utils/dateFormatter';
 
 export const HomePage = () => {
   const selected = useAppSelector((state) => state.selectedOrder.selected);
@@ -23,12 +19,18 @@ export const HomePage = () => {
   const dispatch = useAppDispatch();
 
   const ordersWithProducts = getOrdersWithProducts(orders, products);
+  const { currentOrder } = useGetOrder<OrderWithProducts>({
+    elements: ordersWithProducts,
+    selected,
+  });
+
+  const ordersQuantity = orders.length;
 
   const handleAddOrderClick = () => {
     const newOrder = {
       id: orders.length + 1,
-      title: `Нове надходження ${orders.length + 1}`,
-      date: new Date().toISOString(),
+      title: `Нове надходження ${ordersQuantity + 1}`,
+      date: formattedDate(),
       description: 'Додайте детальний опис надходжень',
     };
 
@@ -52,7 +54,7 @@ export const HomePage = () => {
 
         <div className="home__page-orders-content">
           <OrderList orders={ordersWithProducts} />
-          {selected && <AddProductList />}
+          {selected && <AddProductList currentOrder={currentOrder} />}
         </div>
       </Container>
     </div>

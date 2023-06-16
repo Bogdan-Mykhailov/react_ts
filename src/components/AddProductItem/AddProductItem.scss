@@ -4,9 +4,27 @@
   display: flex;
   align-items: center;
   padding: 20px 0;
-  justify-content: space-around;
+  justify-content: space-between;
 
   &:not(:last-child) {
     border-bottom: 1px solid $color-border;
+  }
+}
+
+.delete-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  width: max-content;
+  height: max-content;
+  border-radius: 50%;
+  background: transparent;
+  margin-right: 5px;
+
+  &__icon {
+    width: 16px;
+    height: 16px;
   }
 }

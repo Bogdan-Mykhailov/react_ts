@@ -23,9 +23,5 @@ export const CurrentDate: FC<Props> = ({ className }) => {
 
   const month = months[monthIndex];
 
-  return (
-    <span className={className}>
-      {`${day} ${month}, ${year}`}
-    </span>
-  );
+  return <span className={className}>{`${day} ${month}, ${year}`}</span>;
 };

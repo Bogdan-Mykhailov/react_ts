@@ -8,9 +8,5 @@ interface Props {
 }
 
 export const CustomNavLink: FC<Props> = ({ to, title }) => {
-  return (
-    <NavLink to={to}>
-      {title}
-    </NavLink>
-  );
+  return <NavLink to={to}>{title}</NavLink>;
 };
