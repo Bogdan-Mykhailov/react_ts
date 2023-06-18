@@ -22,9 +22,5 @@ export const ActiveSessions = () => {
 
   const title = `Переглядають: ${sessionCount}`;
 
-  return (
-    <>
-      <span>{title}</span>
-    </>
-  );
+  return <span>{title}</span>;
 };
