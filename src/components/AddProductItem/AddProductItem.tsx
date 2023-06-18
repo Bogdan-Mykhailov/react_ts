@@ -3,17 +3,19 @@ import './AddProductItem.scss';
 import * as icons from '../../assets/icons';
 import { Button } from '../Button';
 import { deleteProduct, useAppDispatch } from '../../services';
-import { Product } from '../../types';
+import { Order, Product } from '../../types';
 import { Modal } from '../Modal';
 import { useModal } from '../../hooks/useModal';
 
 interface Props {
   product: Product;
+  currentOrder: Order;
 }
 
-export const AddProductItem: FC<Props> = ({ product }) => {
+export const AddProductItem: FC<Props> = ({ product, currentOrder }) => {
   const dispatch = useAppDispatch();
   const { toggleModal, modal } = useModal();
+  const { title: currentTitle } = currentOrder;
 
   const {
     id,
@@ -33,7 +35,11 @@ export const AddProductItem: FC<Props> = ({ product }) => {
       <div className="product__information">
         <div className="product__mark" />
 
-        <img src={photo} alt="Product poster" className="product__cover" />
+        <img
+          src={photo}
+          alt="Product poster"
+          className="product__cover"
+        />
 
         <div className="product__name-cover name-cover">
           <span className="name-cover__title">{title}</span>
@@ -42,6 +48,7 @@ export const AddProductItem: FC<Props> = ({ product }) => {
       </div>
 
       <span className="product__type">{type}</span>
+      <span className="product__current-group-title">{currentTitle}</span>
 
       <Button
         onClick={toggleModal}

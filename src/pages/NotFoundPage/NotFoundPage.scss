@@ -1,9 +1,8 @@
 @import "../../styles/variables";
+@import "../../styles/mixins";
 
 .notFound-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexCentered;
   height: $page-height;
   background: $color-font;
   overflow: hidden;

@@ -116,12 +116,10 @@ export const OrderItem: FC<Props> = ({ order }) => {
           <div className="delete-window__middle middle">
             <div className="middle__wrap wrap">
               <div className="wrap__mark" />
-              {/* <img className="wrap__cover" src={photo} alt="Product cover" /> */}
             </div>
 
             <div className="delete-window__group group">
               <span className="group--title">{title}</span>
-              {/* <span className="group--serial">{serialNumber}</span> */}
             </div>
           </div>
 

@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 .user {
   display: flex;
 
@@ -25,9 +27,7 @@
 
   &__content-links {
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexCentered;
     gap: 20px;
   }
 }

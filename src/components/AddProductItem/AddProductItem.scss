@@ -1,10 +1,10 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .add-product-item {
-  display: flex;
-  align-items: center;
+  @include flexAlignCenterSpaceBetween;
   padding: 20px 0;
-  justify-content: space-between;
+
 
   &:not(:last-child) {
     border-bottom: 1px solid $color-border;
@@ -12,9 +12,7 @@
 }
 
 .delete-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
   cursor: pointer;
   border: none;
   width: max-content;

@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .add-product-list {
   padding: 35px;
@@ -28,9 +29,7 @@
 .list-add-button {
   width: 20px;
   height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
   border-radius: 50%;
   border: 2px solid $color-secondary-dark;
   background: $color-secondary;
@@ -56,9 +55,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
   background-color: $color-white;
   box-shadow: 3px 2px 16px -9px #000000;
 

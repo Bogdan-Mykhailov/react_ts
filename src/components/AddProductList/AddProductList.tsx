@@ -73,7 +73,11 @@ export const AddProductList: FC<Props> = ({ currentOrder }) => {
           const { id } = product;
 
           return (
-            <AddProductItem key={id} product={product} />
+            <AddProductItem
+              key={id}
+              product={product}
+              currentOrder={currentOrder}
+            />
           );
         })}
 

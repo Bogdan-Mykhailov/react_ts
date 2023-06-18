@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .sidebar {
   height: calc(100vh - $header-height);
@@ -38,9 +39,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid $color-border;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
   background-color: $color-white;
   box-shadow: 3px 2px 16px -9px #000000;
 

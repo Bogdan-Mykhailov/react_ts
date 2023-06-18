@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 import {
-  imageAddresses,
-  productTitles,
   SortProducts,
 } from '../types/SortProducts';
+import { imageAddresses, productTitles } from '../utils';
 
 export const useCurrentProduct = () => {
   const [

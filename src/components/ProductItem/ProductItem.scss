@@ -1,20 +1,20 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .product {
-  display: flex;
   width: 100%;
-  align-items: center;
+  @include flexAlignCenterSpaceBetween;
   border-radius: 6px;
   padding: 15px 30px;
   margin-bottom: 14px;
   border: 1px solid $color-border;
   background-color: $color-bg;
-  justify-content: space-between;
 
   &__information {
     display: flex;
     flex-direction: row;
     align-items: center;
+    width: 300px;
   }
 
   &__mark {
@@ -34,6 +34,10 @@
     color: $color-secondary-dark;
     font-size: 14px;
     width: 90px;
+  }
+
+  &__current-group-title {
+    font-size: 16px;
   }
 
   &__group-title {
@@ -204,7 +208,8 @@
 
     &--icon {
       width: 18px;
-      height: 18px; margin-right: 8px;
+      height: 18px;
+      margin-right: 8px;
     }
   }
 }

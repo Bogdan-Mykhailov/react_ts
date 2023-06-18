@@ -2,11 +2,14 @@ import React, { FC } from 'react';
 import './ProductItem.scss';
 import { Button } from '../Button';
 import * as icons from '../../assets/icons';
-import { Product } from '../../types';
-import { createId } from '../../utils';
+import { OrderWithProducts, Product } from '../../types';
+import { createId, getOrdersWithProducts } from '../../utils';
 import { Modal } from '../Modal';
-import { deleteProduct, useAppDispatch } from '../../services';
+import {
+  deleteProduct, useAppDispatch, useAppSelector,
+} from '../../services';
 import { useModal } from '../../hooks/useModal';
+import { useGetOrder } from '../../hooks/useGetOrder';
 
 interface Props {
   product: Product;
@@ -14,12 +17,20 @@ interface Props {
 
 export const ProductItem: FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
+  const selected = useAppSelector((state) => state.selectedOrder.selected);
+  const orders = useAppSelector((state) => state.orders.orders);
+  const products = useAppSelector((state) => state.products.products);
   const { toggleModal, modal } = useModal();
   const {
     id, title, type, guarantee, serialNumber, photo, price,
   } = product;
+  const ordersWithProducts = getOrdersWithProducts(orders, products);
+  const { currentOrder } = useGetOrder<OrderWithProducts>({
+    elements: ordersWithProducts,
+    selected,
+  });
 
-  const orderTitle = 'Невідоме надходження';
+  const orderTitle = currentOrder?.title || 'Невідоме надходження';
 
   const handleRemoveProductClick = () => {
     dispatch(deleteProduct(id));

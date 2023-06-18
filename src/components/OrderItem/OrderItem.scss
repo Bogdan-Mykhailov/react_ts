@@ -1,4 +1,5 @@
 @import '../../styles/variables';
+@import '../../styles/mixins';
 
 .order {
   background: $color-bg;
@@ -62,9 +63,7 @@
   height: 40px;
   border-radius: 50%;
   border: 1px solid $color-border;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
 
   &__icon {
     width: 22px;
@@ -130,9 +129,7 @@
 }
 
 .delete-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flexCentered;
   cursor: pointer;
   border: none;
   width: 40px;
