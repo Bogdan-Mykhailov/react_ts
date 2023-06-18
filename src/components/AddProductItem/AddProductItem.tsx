@@ -16,7 +16,11 @@ export const AddProductItem: FC<Props> = ({ product }) => {
   const { toggleModal, modal } = useModal();
 
   const {
-    id, type, title, serialNumber, photo,
+    id,
+    type,
+    title,
+    serialNumber,
+    photo,
   } = product;
 
   const handleRemoveProductClick = () => {
