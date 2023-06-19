@@ -34,7 +34,7 @@
     <li>Redux Toolkit</li>
     <li>TypeScript</li>
     <li>React Router Dom</li>
-    <li>SASS</li>
+    <li>SСSS</li>
   </ul>
 
 <h3>План встановлення та налаштування проєкту</h3>
