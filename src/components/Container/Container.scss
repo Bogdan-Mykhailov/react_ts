@@ -1,6 +1,6 @@
 @import '../../styles/variables';
 
 .container {
-  padding: 80px 100px;
+  padding: 80px 100px 0;
   width: calc(100vw - $sidebar-width);
 }
