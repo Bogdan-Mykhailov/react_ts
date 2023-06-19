@@ -11,14 +11,15 @@ interface Props {
 export const OrderList: FC<Props> = ({ orders }) => {
   const selected = useAppSelector((state) => state.selectedOrder.selected);
 
-  return (
-    <div className={selected ? 'order-list--short' : 'order-list'}>
-      {orders
-        && orders.map((order) => {
-          const { id } = order;
+  const listType = selected ? 'order-list--short' : 'order-list';
 
-          return <OrderItem key={id} order={order} />;
-        })}
+  return (
+    <div className={listType}>
+      {orders && orders.map((order) => {
+        const { id } = order;
+
+        return <OrderItem key={id} order={order} />;
+      })}
     </div>
   );
 };

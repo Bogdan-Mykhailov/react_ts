@@ -5,7 +5,7 @@
   width: 100vw;
   background-color: rgba(0, 0, 0, 0.6);
   position: fixed;
-  z-index: 100000000;
+  z-index: 2;
   top: 0;
   left: 0;
   @include flexCentered;
@@ -22,9 +22,7 @@
     width: 350px;
     border-radius: 3rem;
     padding: 4rem;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    @include flexAlignCenterColumn;
     background-color: var(--bg);
     transform: scale(0.5);
     transition: 0.5s all;

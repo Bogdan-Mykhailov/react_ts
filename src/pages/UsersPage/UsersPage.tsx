@@ -12,7 +12,11 @@ export const UsersPage = () => {
 
       <Container>
         <div className="user__content">
-          <img className="user__content-avatar" src={images.rick} alt="Rick" />
+          <img
+            className="user__content-avatar"
+            src={images.rick}
+            alt="Rick"
+          />
 
           <h2 className="user__content-name">Bogdan Mykhailov</h2>
 
@@ -48,7 +52,10 @@ export const UsersPage = () => {
               />
             </Link>
 
-            <Link to="mailto:bogdan.mykhailov.work@gmail.com" target="_blank">
+            <Link
+              to="mailto:bogdan.mykhailov.work@gmail.com"
+              target="_blank"
+            >
               <img
                 src={icons.email}
                 alt="email"

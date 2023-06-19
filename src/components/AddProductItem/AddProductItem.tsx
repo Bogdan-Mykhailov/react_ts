@@ -6,6 +6,7 @@ import { deleteProduct, useAppDispatch } from '../../services';
 import { Order, Product } from '../../types';
 import { Modal } from '../Modal';
 import { useModal } from '../../hooks/useModal';
+import { REMOVE_PRODUCT } from '../../utils';
 
 interface Props {
   product: Product;
@@ -34,7 +35,6 @@ export const AddProductItem: FC<Props> = ({ product, currentOrder }) => {
     <div className="add-product-item">
       <div className="product__information">
         <div className="product__mark" />
-
         <img
           src={photo}
           alt="Product poster"
@@ -42,13 +42,19 @@ export const AddProductItem: FC<Props> = ({ product, currentOrder }) => {
         />
 
         <div className="product__name-cover name-cover">
-          <span className="name-cover__title">{title}</span>
-          <span className="name-cover__serial">{serialNumber}</span>
+          <span className="name-cover__title">
+            {title}
+          </span>
+          <span className="name-cover__serial">
+            {serialNumber}
+          </span>
         </div>
       </div>
 
       <span className="product__type">{type}</span>
-      <span className="product__current-group-title">{currentTitle}</span>
+      <span className="product__current-group-title">
+        {currentTitle}
+      </span>
 
       <Button
         onClick={toggleModal}
@@ -60,18 +66,24 @@ export const AddProductItem: FC<Props> = ({ product, currentOrder }) => {
       <Modal modalMode={modal} closeModal={toggleModal}>
         <div className="delete-window">
           <span className="delete-window__title">
-            Ви впевнені, що бажаєте видалити цей продукт?
+            {REMOVE_PRODUCT}
           </span>
 
           <div className="delete-window__middle middle">
             <div className="middle__wrap wrap">
               <div className="wrap__mark" />
-              <img className="wrap__cover" src={photo} alt="Product cover" />
+              <img
+                className="wrap__cover"
+                src={photo}
+                alt="Product cover"
+              />
             </div>
 
             <div className="delete-window__group group">
               <span className="group--title">{title}</span>
-              <span className="group--serial">{serialNumber}</span>
+              <span className="group--serial">
+                {serialNumber}
+              </span>
             </div>
           </div>
 

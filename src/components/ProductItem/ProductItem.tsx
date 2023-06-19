@@ -3,7 +3,7 @@ import './ProductItem.scss';
 import { Button } from '../Button';
 import * as icons from '../../assets/icons';
 import { OrderWithProducts, Product } from '../../types';
-import { createId, getOrdersWithProducts } from '../../utils';
+import { createId, getOrdersWithProducts, REMOVE_PRODUCT } from '../../utils';
 import { Modal } from '../Modal';
 import {
   deleteProduct, useAppDispatch, useAppSelector,
@@ -22,7 +22,13 @@ export const ProductItem: FC<Props> = ({ product }) => {
   const products = useAppSelector((state) => state.products.products);
   const { toggleModal, modal } = useModal();
   const {
-    id, title, type, guarantee, serialNumber, photo, price,
+    id,
+    title,
+    type,
+    guarantee,
+    serialNumber,
+    photo,
+    price,
   } = product;
   const ordersWithProducts = getOrdersWithProducts(orders, products);
   const { currentOrder } = useGetOrder<OrderWithProducts>({
@@ -49,8 +55,13 @@ export const ProductItem: FC<Props> = ({ product }) => {
         />
 
         <div className="product__name-cover name-cover">
-          <span className="name-cover__title">{title}</span>
-          <span className="name-cover__serial">{serialNumber}</span>
+          <span className="name-cover__title">
+            {title}
+          </span>
+
+          <span className="name-cover__serial">
+            {serialNumber}
+          </span>
         </div>
       </div>
 
@@ -59,10 +70,12 @@ export const ProductItem: FC<Props> = ({ product }) => {
       <div className="product__guarantee guarantee">
         <div>
           <span className="guarantee__from">з</span>
+
           <span className="guarantee__text">{guarantee.start}</span>
         </div>
         <div>
           <span className="guarantee__to">до</span>
+
           <span className="guarantee__text">{guarantee.end}</span>
         </div>
       </div>
@@ -79,7 +92,9 @@ export const ProductItem: FC<Props> = ({ product }) => {
         })}
       </div>
 
-      <span className="product__group-title">{orderTitle}</span>
+      <span className="product__group-title">
+        {orderTitle}
+      </span>
 
       <Button
         onClick={toggleModal}
@@ -91,17 +106,23 @@ export const ProductItem: FC<Props> = ({ product }) => {
       <Modal modalMode={modal} closeModal={toggleModal}>
         <div className="delete-window">
           <span className="delete-window__title">
-            Ви впевнені, що бажаєте видалити цей продукт?
+            {REMOVE_PRODUCT}
           </span>
 
           <div className="delete-window__middle middle">
             <div className="middle__wrap wrap">
               <div className="wrap__mark" />
-              <img className="wrap__cover" src={photo} alt="Product cover" />
+
+              <img
+                className="wrap__cover"
+                src={photo}
+                alt="Product cover"
+              />
             </div>
 
             <div className="delete-window__group group">
               <span className="group--title">{title}</span>
+
               <span className="group--serial">{serialNumber}</span>
             </div>
           </div>
@@ -113,6 +134,7 @@ export const ProductItem: FC<Props> = ({ product }) => {
             >
               Відмінити
             </button>
+
             <button
               className="buttons__yes"
               onClick={handleRemoveProductClick}

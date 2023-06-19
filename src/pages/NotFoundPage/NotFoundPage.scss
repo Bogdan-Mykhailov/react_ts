@@ -36,7 +36,7 @@
     height: 10px;
     position: absolute;
     bottom: -175px;
-    border-radius: 50% / 100%;
+    border-radius: $borderRadiusRounded / 100%;
     transform: translatex(-130px) translatey(-30px) rotate(25deg) scalex(1);
     animation: shadow 5s ease-out infinite;
   }
@@ -58,7 +58,7 @@
   left: -5px;
   width: 100px;
   height: 100px;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   position: absolute;
   animation: butt 5s ease-out infinite;
 }
@@ -156,7 +156,7 @@
   background: linear-gradient(255deg, $color-unicorn-main, $color-unicorn-main 80%, rgba(#000,0) 80%);
   width: 255px;
   height: 80px;
-  border-radius: 50% / 50%;
+  border-radius: $borderRadiusRounded / 50%;
   transform: rotate(-72deg);
   position: absolute;
   top: -40px;
@@ -167,7 +167,7 @@
   background: $color-unicorn-main;
   width: 70px;
   height: 115px;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   transform: rotate(22deg);
   position: absolute;
   top: -160px;
@@ -179,7 +179,7 @@
   background: $color-unicorn-main;
   width: 70px;
   height: 70px;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   position: absolute;
   top: -165px;
   left: 185px;
@@ -189,7 +189,7 @@
     background: $color-unicorn-secondary;
     width: 58px;
     height: 115px;
-    border-radius: 50%;
+    border-radius: $borderRadiusRounded;
     transform: rotate(-2deg);
     position: absolute;
     top: 26px;
@@ -201,7 +201,7 @@
     background: #F2FBF8;
     width: 20px;
     height: 20px;
-    border-radius: 50%;
+    border-radius: $borderRadiusRounded;
     position: absolute;
     z-index: 1;
     top: 50px;
@@ -234,7 +234,7 @@
     width: 30px;
     height: 30px;
     position: absolute;
-    border-radius: 50% 2px 50% 50%;
+    border-radius: $borderRadiusRounded 2px $borderRadiusRounded $borderRadiusRounded;
     transform: rotate(-116deg) scale(.5);
     left: 4px;
     top: -2px;
@@ -246,7 +246,7 @@
   height: 20px;
   position: absolute;
   z-index: 1;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   border: 3px solid;
   border-color: transparent transparent #B196A2 #B196A2;
   transform: rotate(-125deg);
@@ -269,7 +269,7 @@
   background: #F23666;
   width: 60px;
   height: 40px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  border-radius: $borderRadiusRounded $borderRadiusRounded 0 0 / 100% 100% 0 0;
   position: absolute;
   top: 0;
   right: 0;
@@ -280,7 +280,7 @@
     background: #F23666;
     width: 60px;
     height: 40px;
-    border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+    border-radius: $borderRadiusRounded $borderRadiusRounded 0 0 / 100% 100% 0 0;
     position: absolute;
     top: 0;
     right: 0;

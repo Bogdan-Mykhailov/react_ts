@@ -7,7 +7,6 @@ export const store = configureStore({
     orders: ordersSlice,
     products: productsSlice,
   },
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().prepend(),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

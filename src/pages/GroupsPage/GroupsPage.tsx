@@ -2,11 +2,18 @@ import React from 'react';
 import * as icons from '../../assets/icons';
 import './GroupsPage.scss';
 import {
-  Button, Container, PageTitle, Sidebar,
+  AddProductList,
+  Button,
+  Container,
+  OrderList,
+  PageTitle,
+  Sidebar,
 } from '../../components';
-import { AddProductList } from '../../components/AddProductList';
-import { addOrder, useAppDispatch, useAppSelector } from '../../services';
-import { OrderList } from '../../components/OrderList';
+import {
+  addOrder,
+  useAppDispatch,
+  useAppSelector,
+} from '../../services';
 import { getOrdersWithProducts } from '../../utils';
 import { useGetOrder } from '../../hooks/useGetOrder';
 import { OrderWithProducts } from '../../types';
@@ -49,12 +56,15 @@ export const GroupsPage = () => {
             iconStyles="home-button__icon"
             icon={icons.plus}
           />
+
           <PageTitle title="Надходження" quantity={ordersQuantity} />
         </div>
 
         <div className="home__page-orders-content">
           <OrderList orders={ordersWithProducts} />
-          {selected && <AddProductList currentOrder={currentOrder} />}
+
+          {selected
+            && <AddProductList currentOrder={currentOrder} />}
         </div>
       </Container>
     </div>

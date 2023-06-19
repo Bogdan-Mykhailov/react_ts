@@ -57,7 +57,11 @@ export const routeConfig: Record<PATH, RouteProps> = {
 export const MainRoutes: FC = () => (
   <Routes>
     {Object.values(routeConfig).map(({ path, element }) => (
-      <Route path={path} key={path} element={element} />
+      <Route
+        path={path}
+        key={path}
+        element={element}
+      />
     ))}
   </Routes>
 );

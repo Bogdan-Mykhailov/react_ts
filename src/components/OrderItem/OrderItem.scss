@@ -93,9 +93,7 @@
 }
 
 .date {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexAlignCenterColumn;
   width: 180px;
 
   &__order {
@@ -109,9 +107,7 @@
 }
 
 .price {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexAlignCenterColumn;
   width: 150px;
 
   &--none {

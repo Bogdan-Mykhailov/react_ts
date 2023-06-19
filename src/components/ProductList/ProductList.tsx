@@ -14,10 +14,7 @@ export const ProductList: FC<Props> = ({ products }) => {
         const { id } = product;
 
         return (
-          <ProductItem
-            key={id}
-            product={product}
-          />
+          <ProductItem key={id} product={product} />
         );
       })}
     </div>

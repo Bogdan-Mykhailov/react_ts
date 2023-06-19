@@ -17,7 +17,10 @@ interface Props {
 
 export const AddProductList: FC<Props> = ({ currentOrder }) => {
   const {
-    currentType, currentName, currentImage, generateRandomType,
+    currentType,
+    currentName,
+    currentImage,
+    generateRandomType,
   } = useCurrentProduct();
   const dispatch = useAppDispatch();
 
@@ -44,8 +47,16 @@ export const AddProductList: FC<Props> = ({ currentOrder }) => {
         end: formattedDatePlus3Years(),
       },
       price: [
-        { value: 100, symbol: 'USD', isDefault: 0 },
-        { value: 2600, symbol: 'UAH', isDefault: 1 },
+        {
+          value: 100,
+          symbol: 'USD',
+          isDefault: 0,
+        },
+        {
+          value: 2600,
+          symbol: 'UAH',
+          isDefault: 1,
+        },
       ],
       order: isSelected,
       date: formattedDate(),
@@ -57,7 +68,9 @@ export const AddProductList: FC<Props> = ({ currentOrder }) => {
 
   return (
     <div className="add-product-list">
-      <span className="add-product-list__title">{currentOrder?.title}</span>
+      <span className="add-product-list__title">
+        {currentOrder?.title}
+      </span>
 
       <Button
         onClick={handleAddProductClick}

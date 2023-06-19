@@ -7,7 +7,11 @@ interface Props {
   closeModal: () => void;
 }
 
-export const Modal:FC<Props> = ({ modalMode, closeModal, children }) => {
+export const Modal:FC<Props> = ({
+  modalMode,
+  closeModal,
+  children,
+}) => {
   return (
     <div
       className={modalMode

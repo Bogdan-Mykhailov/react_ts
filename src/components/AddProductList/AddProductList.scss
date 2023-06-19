@@ -30,7 +30,7 @@
   width: 20px;
   height: 20px;
   @include flexCentered;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   border: 2px solid $color-secondary-dark;
   background: $color-secondary;
   cursor: pointer;
@@ -53,7 +53,7 @@
   cursor: pointer;
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: $borderRadiusRounded;
   border: 1px solid transparent;
   @include flexCentered;
   background-color: $color-white;

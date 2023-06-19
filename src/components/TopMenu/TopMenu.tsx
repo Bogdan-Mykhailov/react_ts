@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.scss';
+import './TopMenu.scss';
 import { Logo } from '../Logo';
 import { Input } from '../Input';
 import * as icons from '../../assets/icons';
@@ -7,7 +7,7 @@ import { Clock } from '../Clock';
 import { CurrentDate } from '../CurrentDate';
 import { ActiveSessions } from '../ActiveSessions';
 
-export const Header = () => {
+export const TopMenu = () => {
   return (
     <header className="header">
       <div className="header__search-content search-content">
@@ -31,7 +31,11 @@ export const Header = () => {
           <ActiveSessions />
 
           <div className="stats__time-wrapper">
-            <img className="stats__icon" src={icons.clock} alt="Clock icon" />
+            <img
+              className="stats__icon"
+              src={icons.clock}
+              alt="Clock icon"
+            />
 
             <Clock className="stats__time" />
           </div>

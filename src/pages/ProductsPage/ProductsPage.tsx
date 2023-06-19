@@ -1,9 +1,13 @@
 import React, { ChangeEvent, useState } from 'react';
 import './ProductsPage.scss';
-import { Container, PageTitle, Sidebar } from '../../components';
+import {
+  Container,
+  PageTitle,
+  ProductList,
+  Select,
+  Sidebar,
+} from '../../components';
 import { useAppSelector } from '../../services';
-import { ProductList } from '../../components/ProductList';
-import { Select } from '../../components/Select';
 import { SortProducts } from '../../types/SortProducts';
 
 export const ProductsPage = () => {

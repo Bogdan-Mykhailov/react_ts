@@ -1,7 +1,7 @@
+@import "../../styles/mixins";
+
 .menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @include flexAlignCenterColumn;
   font-size: 18px;
 
   :not(:last-child) {

@@ -21,11 +21,17 @@ export const Clock: FC<Props> = ({ className }) => {
 
   return (
     <>
-      <span className={className}>{getTwoDigits(date.getHours())}</span>
+      <span className={className}>
+        {getTwoDigits(date.getHours())}
+      </span>
 
-      <span className="seconds">{showSeconds ? ':' : ''}</span>
+      <span className="seconds">
+        {showSeconds ? ':' : ''}
+      </span>
 
-      <span className={className}>{getTwoDigits(date.getMinutes())}</span>
+      <span className={className}>
+        {getTwoDigits(date.getMinutes())}
+      </span>
     </>
   );
 };

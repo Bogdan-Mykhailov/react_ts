@@ -8,10 +8,17 @@ interface Props {
   value: SortProducts;
 }
 
-export const Select: FC<Props> = ({ label, onSelectChange, value }) => {
+export const Select: FC<Props> = ({
+  label,
+  onSelectChange,
+  value,
+}) => {
   return (
     <div className="select">
-      <label className="select__label" htmlFor="select">
+      <label
+        className="select__label"
+        htmlFor="select"
+      >
         {label}
       </label>
 

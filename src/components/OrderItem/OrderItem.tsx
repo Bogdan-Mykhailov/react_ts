@@ -10,7 +10,7 @@ import {
   useAppSelector,
 } from '../../services';
 import { dateFormatted, formattedDate } from '../../utils/dateFormatter';
-import { currentProductCount } from '../../utils';
+import { currentProductCount, REMOVE_ORDER } from '../../utils';
 import { Modal } from '../Modal';
 import { useModal } from '../../hooks/useModal';
 
@@ -23,7 +23,11 @@ export const OrderItem: FC<Props> = ({ order }) => {
   const dispatch = useAppDispatch();
   const selected = useAppSelector((state) => state.selectedOrder.selected);
 
-  const { id, title, products } = order;
+  const {
+    id,
+    title,
+    products,
+  } = order;
 
   const handleRemoveOrderClick = () => {
     dispatch(deleteOrder(id));
@@ -37,12 +41,9 @@ export const OrderItem: FC<Props> = ({ order }) => {
   const productQuantity = products.length;
   const productQuantityTitle = currentProductCount(productQuantity);
 
-  const isSelected = selected === id;
-
   const sumDefault0 = products.reduce((sum, { price }) => {
     return (
-      sum
-      + price
+      sum + price
         .filter(({ isDefault }) => isDefault === 0)
         .reduce((acc, { value }) => acc + value, 0)
     );
@@ -50,19 +51,28 @@ export const OrderItem: FC<Props> = ({ order }) => {
 
   const sumDefault1 = products.reduce((sum, { price }) => {
     return (
-      sum
-      + price
+      sum + price
         .filter(({ isDefault }) => isDefault === 1)
         .reduce((acc, { value }) => acc + value, 0)
     );
   }, 0);
 
+  const isSelected = selected === id;
   const usd = `${sumDefault0} $`;
   const uah = `${sumDefault1} грн`;
+  const orderSize = selected
+    ? 'order--small'
+    : 'order';
+  const titleVisibility = selected
+    ? 'order__title-none'
+    : 'order__title';
+  const priceVisibility = selected
+    ? 'price--none'
+    : 'price';
 
   return (
-    <div className={selected ? 'order--small' : 'order'}>
-      <span className={selected ? 'order__title-none' : 'order__title'}>
+    <div className={orderSize}>
+      <span className={titleVisibility}>
         {title}
       </span>
 
@@ -75,17 +85,25 @@ export const OrderItem: FC<Props> = ({ order }) => {
         />
 
         <div className="order__goods-quantity goods-quantity">
-          <span className="goods-quantity__count">{productQuantity}</span>
-          <span className="goods-quantity__name">{productQuantityTitle}</span>
+          <span className="goods-quantity__count">
+            {productQuantity}
+          </span>
+          <span className="goods-quantity__name">
+            {productQuantityTitle}
+          </span>
         </div>
       </div>
 
       <div className="order__date date">
-        <span className="date__order">{dateFormatted}</span>
-        <span className="date__current">{formattedDate()}</span>
+        <span className="date__order">
+          {dateFormatted}
+        </span>
+        <span className="date__current">
+          {formattedDate()}
+        </span>
       </div>
 
-      <div className={selected ? 'price--none' : 'price'}>
+      <div className={priceVisibility}>
         <span className="price__usd">{usd}</span>
         <span className="price__uah">{uah}</span>
       </div>
@@ -110,7 +128,7 @@ export const OrderItem: FC<Props> = ({ order }) => {
       <Modal modalMode={modal} closeModal={toggleModal}>
         <div className="delete-window">
           <span className="delete-window__title">
-            Ви впевнені, що бажаєте видалити це надходження?
+            {REMOVE_ORDER}
           </span>
 
           <div className="delete-window__middle middle">
@@ -130,6 +148,7 @@ export const OrderItem: FC<Props> = ({ order }) => {
             >
               Відмінити
             </button>
+
             <button
               className="buttons__yes"
               onClick={handleRemoveOrderClick}
