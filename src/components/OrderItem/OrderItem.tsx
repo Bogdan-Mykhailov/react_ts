@@ -4,10 +4,7 @@ import { Button } from '../Button';
 import * as icons from '../../assets/icons';
 import { OrderWithProducts } from '../../types';
 import {
-  deleteOrder,
-  select,
-  useAppDispatch,
-  useAppSelector,
+  deleteOrder, select, useAppDispatch, useAppSelector,
 } from '../../services';
 import { dateFormatted, formattedDate } from '../../utils/dateFormatter';
 import { currentProductCount, REMOVE_ORDER } from '../../utils';
@@ -70,6 +67,35 @@ export const OrderItem: FC<Props> = ({ order }) => {
     ? 'price--none'
     : 'price';
 
+  const getCorrectIcon = () => {
+    if (isSelected) {
+      return (
+        <div className="order__arrow-Wrapper">
+          <img
+            className="order__arrow"
+            src={icons.angleRight}
+            alt="Angle right icon"
+          />
+        </div>
+      );
+    }
+
+    if (orderSize === 'order--small') {
+      return <div className="order__arrow-Wrapper" />;
+    }
+
+    return (
+      <Button
+        onClick={toggleModal}
+        buttonStyles="order__delete-button delete-button"
+        iconStyles="delete-button__icon"
+        icon={icons.trash}
+      />
+    );
+  };
+
+  const correctIcon = getCorrectIcon();
+
   return (
     <div className={orderSize}>
       <span className={titleVisibility}>
@@ -108,22 +134,7 @@ export const OrderItem: FC<Props> = ({ order }) => {
         <span className="price__uah">{uah}</span>
       </div>
 
-      {isSelected ? (
-        <div className="order__arrow-Wrapper">
-          <img
-            className="order__arrow"
-            src={icons.angleRight}
-            alt="Angle right icon"
-          />
-        </div>
-      ) : (
-        <Button
-          onClick={toggleModal}
-          buttonStyles="order__delete-button delete-button"
-          iconStyles="delete-button__icon"
-          icon={icons.trash}
-        />
-      )}
+      {correctIcon}
 
       <Modal modalMode={modal} closeModal={toggleModal}>
         <div className="delete-window">

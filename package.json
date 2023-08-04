@@ -1,7 +1,7 @@
 {
   "name": "test_dzen",
   "version": "0.1.0",
-  "homepage": "https://bogdan-mykhailov.github.io/test/",
+  "homepage": "https://bogdan-mykhailov.github.io/react_ts/",
   "private": true,
   "dependencies": {
     "@mate-academy/eslint-config-react-typescript": "^1.0.11",
