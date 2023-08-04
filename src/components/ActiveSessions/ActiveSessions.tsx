@@ -1,25 +1,22 @@
 import React, { useEffect, useState } from 'react';
+import io from 'socket.io-client';
+
+const socket = io('https://react-ts-server.onrender.com');
 
 export const ActiveSessions = () => {
   const [sessionCount, setSessionCount] = useState(0);
 
   useEffect(() => {
-    const updateSessionCount = () => {
-      const activeSessions = Object.keys(sessionStorage)
-        .filter((key) => key.startsWith('session_'));
+    socket.on('sessionCountUpdate', (count) => {
+      setSessionCount(count);
+    });
 
-      setSessionCount(activeSessions.length);
-    };
-
-    updateSessionCount();
-
-    window.addEventListener('storage', updateSessionCount);
+    socket.emit('getSessionCount');
 
     return () => {
-      window.removeEventListener('storage', updateSessionCount);
+      socket.off('sessionCountUpdate');
     };
   }, []);
-
   const title = `Переглядають: ${sessionCount}`;
 
   return <span>{title}</span>;
