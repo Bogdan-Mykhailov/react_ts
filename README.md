@@ -5,7 +5,7 @@
 
 <h4>Inventory: Платформа для ведення обліку нової продукції</h4>
 
-<a href='https://bogdan-mykhailov.github.io/test/' rel='nofollow'>
+<a href='https://bogdan-mykhailov.github.io/react_ts/' rel='nofollow'>
 <img src="https://img.shields.io/badge/Inventory_demo_link-4e93e6?style=for-the-badge&logo=Portfolio&logoColor=black" alt="inventory">
 </a>
 
